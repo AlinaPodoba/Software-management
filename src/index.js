@@ -40,7 +40,7 @@ MongoClient.connect(connectionString, {
             cookie: { maxAge: 900000 }
           }))
         
-          // middleware to make 'user' available to all template
+          // middleware to make 'user' available
         app.use(function(req, res, next) {
             res.locals.user_sess = req.session.user_sess 
             res.locals.appointments_sess = req.session.appointments_sess
