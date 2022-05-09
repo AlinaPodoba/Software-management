@@ -300,7 +300,7 @@ function checkToken(req, res, next) {
 
 function sendConfirmationEmail(name, email, ref, date, total_days) {
 
-    // This information is supposed to be hidden in the config.js file but we left it
+    // This information is supposed to be hidden in th
     // exposed for the project testers so they can validate the test.
     const transport = nodemailer.createTransport({
         service: 'Hotmail',
