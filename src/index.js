@@ -40,7 +40,7 @@ MongoClient.connect(connectionString, {
             cookie: { maxAge: 900000 }
           }))
         
-          // middleware to make 'user'
+          // middleware to make 'user' available to all template
         app.use(function(req, res, next) {
             res.locals.user_sess = req.session.user_sess 
             res.locals.appointments_sess = req.session.appointments_sess
@@ -64,6 +64,7 @@ MongoClient.connect(connectionString, {
         router.get('/', async function(req, res) {  
             res.status(200).render('home')
         })
+
 
         router.get('/login', checkToken, function(req, res) {
             const { role } = req.user
@@ -322,6 +323,8 @@ t Confirmation</h1>
           </div>`,
     }).catch(err => console.log(err))
   }
+
+
 
 module.exports = app.listen(app_port)
 console.log(`app is running. port: ${app_port}`)
