@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Search - ADEN</title>
+  <title>Search</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -84,7 +84,7 @@
     <form>
       <fieldset>
         <legend>WHAT ARE YOU LOOKING FOR?</legend>
-      
+
         <strong>Filter by:</strong>
         <br/>
         <form>
@@ -104,9 +104,9 @@
         <form>
           <input type="radio" id="name" name="fil" value="name" onclick=sort(0)>
           <label for="name">Name</label>
-          <input type="radio" id="specialty" name="fil" value="specialty" onclick=sort(3)>
+          <input type="radio" id="specialty" name="fil" value="specialty" onclick=sort(2)>
           <label for="specialty">Specialty</label>
-        </form> 
+        </form>
 
         <div class="table-data">
           <table border="1" id="tbl1">
@@ -114,11 +114,14 @@
                   
                   <th>Service provider name </th>
                   <th>email       </th>
+
                   <th>Specialty   </th>
                   <th>Details Page  </th>
-                <td>
+
               </tr>
+
             <%
+
               if(doc_sess){
               var i=1;
 
@@ -126,10 +129,12 @@
               %>
 
               <tr>
-                  
+
                   <td class="sort1"><%=data.user_name %></td>
                   <td><%=data.email %></td>
-                  <td class="sort2"><%=data.work_clinic %></td>
+                 <td class="sort2"><%=data.Specialty %></td>
+                <td>                <a href="/about"><i class="bi bi-menu-button-wide-fill"></i></a>
+                </td>
               </tr>
               <%  i++; }) %>
               <% } else{ %>
@@ -194,7 +199,7 @@
         idx = 2;
       }
       else if(filterbyspecialty.checked == true){
-        idx = 3;
+        idx = 2;
       }
       
 
@@ -210,6 +215,7 @@
         }       
       }
     }
+
   </script>
 
   <script src="js/main.js"></script>

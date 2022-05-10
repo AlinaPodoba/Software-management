@@ -92,6 +92,13 @@
 
             <div class="col-md-7" id="d_clinic" style="display:none">
               <div class="form-group">
+                  <span class="form-label">Work clinic:</span>
+                  <select name="work_clinic" id="work_clinic" class="form-control">
+                      <option value="Other">Other </option>
+                      <option value="Hair Salon">Hair Salon </option>
+                      <option value="Nails">Nails </option>
+                      <option value="Doctor">Doctor </option>
+                  </select>
 
 
                   <span class="select-arrow"></span>
@@ -100,17 +107,26 @@
 
           <div class="col-md-7" id="d_specialty" style="display:none">
             <div class="form-group">
+                <span class="form-label">Specialty:</span>
+                <select name="Specialty" id="Specialty" class="form-control">
+                    <option value="Other">Other </option>
+                    <option value="Hair">Hair</option>
+                    <option value="Nails">Nails</option>
+                    <option value="Family Doctor">Family</option>
+                </select>
 
 
                 <span class="select-arrow"></span>
             </div>
-        </div> 
+        </div>
 
             <div id="inp" class="form-group" style="display:none">
                 <label for="">ServiceID:</label>
                 <input id="dID" type="password" class="form-control" data-validation="length" data-validation-length="min5" name="doctorID" >
             </div>
+<!--
             <input id="sendEmailButton" type="button" value="Request for approval" onclick="sendEmail()" style="display:none"/>
+-->
 
             <div class="flash-container">
               <% const messages = getMessages() %>

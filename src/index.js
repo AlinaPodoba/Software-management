@@ -164,7 +164,9 @@ MongoClient.connect(connectionString, {
             }
             res.status(200).render('search')
         })
-
+        router.get('/about', async function(req, res) {
+            res.status(200).render('about')
+        })
 
         router.get('/reviews', checkToken, function(req, res) {
             const { role } = req.user
@@ -228,51 +230,6 @@ MongoClient.connect(connectionString, {
                 return res.redirect('/')
             }
             return res.status(200).render('appointments-records')
-        })
-
-        router.get('/insurance', checkToken, function(req, res) {
-            const { role } = req.user
-
-            if (role == -1 || role == undefined) {
-                //alert('You are not a registered user')
-                return res.redirect('/')
-            }
-            res.status(200).render('insurance')
-        })
-
-        router.get('/forum', checkToken, function(req, res) {
-            const { role } = req.user
-
-            if (role == -1 || role == undefined) {
-                //alert('You are not a registered user')
-                return res.redirect('/')
-            }
-            res.redirect('https://www.tapatalk.com/groups/aden/')
-        })
-
-        router.get('/insurance-payment', checkToken, function(req, res) {
-            const { role } = req.user
-
-            if (role == -1 || role == undefined) {
-                //alert('You are not a registered user')
-                return res.redirect('/')
-            }
-            res.status(200).render('insurance-payment')
-        })
-
-        router.post('/insurance-payment', checkToken, function(req, res) {
-
-            let ref = Math.floor((Math.random() * 1000) + 1) * 23
-
-            sendConfirmationEmail(
-                req.body.firstname,
-                req.body.email,
-                ref,
-                req.body.date,
-                req.body.total_days
-            )
-
-            return res.redirect('/')
         })
 
 

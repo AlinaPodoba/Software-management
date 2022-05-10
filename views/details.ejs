@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Details - ADEN</title>
+  <title>Details</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -56,9 +56,7 @@
                             <h5>
                                 <%= user_sess.user_name %>
                             </h5>
-                            <h6>
-                                role : <%= user_sess.role %>
-                            </h6>
+
                             <p class="proile-rating">RANKINGS : <span>8/10</span></p>
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
                         <li class="nav-item">
@@ -101,12 +99,7 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-6">
-                                        <label>Clinic</label>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <p><%= user_sess.clinic %></p>
-                                    </div>
+
                                 </div>
                                 <% if (user_sess.role == 'doctor') { %>
                                     <div class="row">
